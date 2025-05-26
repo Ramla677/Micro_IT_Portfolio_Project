@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MD Ramla Fathima | Portfolio</title>
+  <!-- Font Awesome for skill icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #6a11cb;
+      --secondary: #2575fc;
+      --accent: #ff6f61;
+      --bg: #f6f7fb;
+      --card: #fff;
+      --text: #232946;
+      --shadow: 0 8px 32px rgba(106,17,203,0.09);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(120deg, var(--primary) 60%, var(--secondary) 100%);
+      color: #fff;
+      text-align: center;
+      padding: 4rem 1rem 2.5rem 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: -60px; left: 50%; transform: translateX(-50%);
+      width: 120vw; height: 180px;
+      background: radial-gradient(circle at 60% 40%, #fff2, transparent 70%);
+      z-index: 0;
+    }
+    .profile-img {
+      width: 110px; height: 110px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      margin-bottom: 1.2rem;
+      background: #fff;
+      position: relative;
+      z-index: 1;
+    }
+    header h1 {
+      font-size: 2.5rem; font-weight: 700; letter-spacing: 1px; z-index: 1; position: relative;
+    }
+    header p {
+      font-size: 1.25rem; margin-top: 0.5rem; z-index: 1; position: relative;
+    }
+    nav {
+      margin-top: 1.7rem; z-index: 1; position: relative;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 1.2rem;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.07rem;
+      padding-bottom: 3px;
+      border-bottom: 2px solid transparent;
+      transition: 0.25s;
+    }
+    nav a:hover, nav a:focus {
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent);
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 1rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+    }
+    .section-card {
+      background: var(--card);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 2.2rem 2rem;
+      flex: 1 1 340px;
+      min-width: 300px;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1s;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    .section-card h2 {
+      font-size: 2rem;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+    }
+    .section-card p {
+      font-size: 1.15rem;
+      color: #3b3b4f;
+      margin-bottom: 1rem;
+    }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+    .skill-tag {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #f6f7fb;
+      color: #6a11cb;
+      border-radius: 16px;
+      padding: 0.5rem 1.1rem;
+      font-weight: 600;
+      font-size: 1.02rem;
+      box-shadow: 0 2px 8px #6a11cb09;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+      cursor: pointer;
+    }
+    .skill-tag:hover {
+      background: #6a11cb;
+      color: #fff;
+      transform: scale(1.08);
+    }
+    .skill-tag i {
+      font-size: 1.3rem;
+    }
+    .section {
+      max-width: 1100px;
+      margin: 2.5rem auto 0 auto;
+      padding: 2.5rem 1.5rem;
+      animation: fadeInUp 1s;
+    }
+    .section-title {
+      font-size: 2rem;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+    }
+    .card {
+      background: var(--card);
+      padding: 1.7rem 1.5rem;
+      border-radius: 14px;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.22s, box-shadow 0.22s;
+      position: relative;
+    }
+    .card:hover {
+      transform: translateY(-6px) scale(1.025);
+      box-shadow: 0 12px 36px rgba(106,17,203,0.13);
+    }
+    .card h3 {
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+    }
+    .card a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+      transition: color 0.22s;
+    }
+    .card a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+    .contact-links a {
+      display: inline-block;
+      margin-right: 18px;
+      text-decoration: none;
+      color: var(--secondary);
+      font-weight: 600;
+      font-size: 1.07rem;
+      transition: color 0.2s;
+    }
+    .contact-links a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.7rem 1.5rem;
+      border-radius: 7px;
+      text-decoration: none;
+      margin-top: 22px;
+      font-size: 1.09rem;
+      font-weight: 600;
+      box-shadow: 0 2px 12px #ff6f6122;
+      transition: background 0.25s, transform 0.18s;
+    }
+    .btn:hover {
+      background: var(--secondary);
+      transform: translateY(-2px) scale(1.04);
+    }
+    @media (max-width: 900px) {
+      .container { flex-direction: column; gap: 1.2rem; padding: 1.2rem 0.5rem; }
+      .section-card { padding: 1.2rem 1rem; }
+    }
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.5rem; }
+      .section-title, .section-card h2 { font-size: 1.1rem; }
+      .profile-img { width: 70px; height: 70px; }
+      .container, .section { padding: 1rem 0.3rem; }
+      .card { padding: 1rem 0.7rem; }
+      nav a { font-size: 0.95rem; margin: 0 0.5rem; }
+    }
+    footer {
+      background: var(--primary);
+      color: #fff;
+      text-align: center;
+      padding: 2.2rem 1rem;
+      font-size: 1rem;
+      letter-spacing: 0.2px;
+      margin-top: 2.5rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://avatars.githubusercontent.com/u/162569313?v=4" alt="MD Ramla Fathima" class="profile-img" />
+  <h1>MD Ramla Fathima</h1>
+  <p>Full Stack Developer | Aspiring Data Scientist</p>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills & Tools</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- About Me and Skills & Tools as Separate Cards -->
+<div class="container">
+  <section id="about" class="section-card">
+    <h2>About Me</h2>
+    <p>I am currently pursuing a B.E. in Artificial Intelligence and Data Science at Stanley College of Engineering and Technology for Women. I am passionate about development and data, and my goal is to become a Data Scientist who can build meaningful, data-driven solutions.</p>
+    <p>People describe me as curious, creative, and detail-oriented. I enjoy turning ideas into interactive user experiences and constantly strive to expand my skill set with every new challenge.</p>
+  </section>
+  <section id="skills" class="section-card">
+    <h2>Skills & Tools</h2>
+    <div class="skills-list">
+      <span class="skill-tag" title="HTML"><i class="fab fa-html5"></i> HTML</span>
+      <span class="skill-tag" title="CSS"><i class="fab fa-css3-alt"></i> CSS</span>
+      <span class="skill-tag" title="Python"><i class="fab fa-python"></i> Python</span>
+      <span class="skill-tag" title="Java"><i class="fab fa-java"></i> Java</span>
+      <span class="skill-tag" title="R Programming"><i class="fas fa-chart-line"></i> R</span>
+      <span class="skill-tag" title="Power BI"><i class="fas fa-chart-bar"></i> Power BI</span>
+      <span class="skill-tag" title="RStudio"><i class="fas fa-desktop"></i> RStudio</span>
+      <span class="skill-tag" title="IDLE"><i class="fas fa-terminal"></i> IDLE</span>
+      <span class="skill-tag" title="JDK"><i class="fas fa-cogs"></i> JDK</span>
+      <span class="skill-tag" title="Git"><i class="fab fa-git-alt"></i> Git</span>
+      <span class="skill-tag" title="VS Code"><i class="fas fa-code"></i> VS Code</span>
+    </div>
+  </section>
+</div>
+
+<section id="projects" class="section">
+  <div class="section-title">Projects</div>
+  <div class="card">
+    <h3>Amazon Clone (Frontend)</h3>
+    <p>A static front-end clone of Amazon’s homepage using HTML and CSS. It includes a styled navigation bar, product grid layout, and visual UI components that reflect a real-world eCommerce platform.</p>
+    <p><a href="https://github.com/Ramla677/Amazon-clone.git" target="_blank">View GitHub Repository</a></p>
+  </div>
+  <!-- Add more project cards here if you want -->
+</section>
+
+<section id="contact" class="section">
+  <div class="section-title">Contact Me</div>
+  <div class="card">
+    <p>Email: <a href="mailto:ramlafatima04@gmail.com">ramlafatima04@gmail.com</a></p>
+    <div class="contact-links">
+      <a href="https://github.com/Ramla677" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/md-ramla-fathima-3773912b5" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </div>
+    <a href="MD_Ramla_Fathima_Resume-13.pdf" class="btn" download>Download Résumé</a>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 MD Ramla Fathima. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
